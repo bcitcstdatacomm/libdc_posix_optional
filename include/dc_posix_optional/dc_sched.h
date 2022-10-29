@@ -20,7 +20,6 @@
 
 
 #include <dc_env/env.h>
-#include <dc_posix/dc_sched.h>
 #include <sched.h>
 #include <sys/types.h>
 

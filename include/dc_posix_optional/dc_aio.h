@@ -20,7 +20,6 @@
 
 
 #include <dc_env/env.h>
-#include <dc_posix/dc_aio.h>
 #include <aio.h>
 
 

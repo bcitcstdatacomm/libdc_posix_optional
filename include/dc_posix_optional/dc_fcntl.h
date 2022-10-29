@@ -22,11 +22,6 @@
 #error "No funnctions exist in this header"
 
 
-#include <dc_env/env.h>
-#include <dc_posix/dc_fcntl.h>
-#include <fcntl.h>
-
-
 #ifdef __cplusplus
 extern "C" {
 #endif
