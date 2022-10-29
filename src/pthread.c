@@ -128,28 +128,6 @@ int dc_pthread_attr_setstacksize(const struct dc_env *env, struct dc_error *err,
     return ret_val;
 }
 
-int dc_pthread_barrierattr_getpshared(const struct dc_env *env, struct dc_error *err, const pthread_barrierattr_t *restrict attr, int *restrict pshared)
-{
-    int ret_val;
-
-    DC_TRACE(env);
-    errno = 0;
-    ret_val = pthread_barrierattr_getpshared(attr, pshared);
-
-    return ret_val;
-}
-
-int dc_pthread_barrierattr_setpshared(const struct dc_env *env, struct dc_error *err, pthread_barrierattr_t *attr, int pshared)
-{
-    int ret_val;
-
-    DC_TRACE(env);
-    errno = 0;
-    ret_val = pthread_barrierattr_setpshared(attr, pshared);
-
-    return ret_val;
-}
-
 int dc_pthread_condattr_getpshared(const struct dc_env *env, struct dc_error *err, const pthread_condattr_t *restrict attr, int *restrict pshared)
 {
     int ret_val;
@@ -168,17 +146,6 @@ int dc_pthread_condattr_setpshared(const struct dc_env *env, struct dc_error *er
     DC_TRACE(env);
     errno = 0;
     ret_val = pthread_condattr_setpshared(attr, pshared);
-
-    return ret_val;
-}
-
-int dc_pthread_getcpuclockid(const struct dc_env *env, struct dc_error *err, pthread_t thread_id, clockid_t *clock_id)
-{
-    int ret_val;
-
-    DC_TRACE(env);
-    errno = 0;
-    ret_val = pthread_getcpuclockid(thread_id, clock_id);
 
     return ret_val;
 }
@@ -311,17 +278,6 @@ int dc_pthread_setschedparam(const struct dc_env *env, struct dc_error *err, pth
     DC_TRACE(env);
     errno = 0;
     ret_val = pthread_setschedparam(thread, policy, param);
-
-    return ret_val;
-}
-
-int dc_pthread_setschedprio(const struct dc_env *env, struct dc_error *err, pthread_t thread, int prio)
-{
-    int ret_val;
-
-    DC_TRACE(env);
-    errno = 0;
-    ret_val = pthread_setschedprio(thread, prio);
 
     return ret_val;
 }

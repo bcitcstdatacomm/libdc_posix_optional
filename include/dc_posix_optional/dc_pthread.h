@@ -85,16 +85,6 @@ int dc_pthread_attr_getstacksize(const struct dc_env *env, struct dc_error *err,
  * @param env
  * @param err
  * @param attr
- * @param inheritsched
- * @return
- */
-int dc_pthread_attr_setinheritsched(const struct dc_env *env, struct dc_error *err, pthread_attr_t *attr, int inheritsched);
-
-/**
- *
- * @param env
- * @param err
- * @param attr
  * @param policy
  * @return
  */
@@ -139,26 +129,6 @@ int dc_pthread_attr_setstacksize(const struct dc_env *env, struct dc_error *err,
  * @param pshared
  * @return
  */
-int dc_pthread_barrierattr_getpshared(const struct dc_env *env, struct dc_error *err, const pthread_barrierattr_t *restrict attr, int *restrict pshared);
-
-/**
- *
- * @param env
- * @param err
- * @param attr
- * @param pshared
- * @return
- */
-int dc_pthread_barrierattr_setpshared(const struct dc_env *env, struct dc_error *err, pthread_barrierattr_t *attr, int pshared);
-
-/**
- *
- * @param env
- * @param err
- * @param attr
- * @param pshared
- * @return
- */
 int dc_pthread_condattr_getpshared(const struct dc_env *env, struct dc_error *err, const pthread_condattr_t *restrict attr, int *restrict pshared);
 
 /**
@@ -170,16 +140,6 @@ int dc_pthread_condattr_getpshared(const struct dc_env *env, struct dc_error *er
  * @return
  */
 int dc_pthread_condattr_setpshared(const struct dc_env *env, struct dc_error *err, pthread_condattr_t *attr, int pshared);
-
-/**
- *
- * @param env
- * @param err
- * @param thread_id
- * @param clock_id
- * @return
- */
-int dc_pthread_getcpuclockid(const struct dc_env *env, struct dc_error *err, pthread_t thread_id, clockid_t *clock_id);
 
 /**
  *
@@ -304,20 +264,17 @@ int dc_pthread_rwlockattr_setpshared(const struct dc_env *env, struct dc_error *
  */
 int dc_pthread_setschedparam(const struct dc_env *env, struct dc_error *err, pthread_t thread, int policy, const struct sched_param *param);
 
-/**
- *
- * @param env
- * @param err
- * @param thread
- * @param prio
- * @return
- */
-int dc_pthread_setschedprio(const struct dc_env *env, struct dc_error *err, pthread_t thread, int prio);
-
 
 #ifdef __cplusplus
 }
 #endif
+
+
+// Not on macOS
+// int dc_pthread_barrierattr_getpshared(const struct dc_env *env, struct dc_error *err, const pthread_barrierattr_t *restrict attr, int *restrict pshared);
+// int dc_pthread_barrierattr_setpshared(const struct dc_env *env, struct dc_error *err, pthread_barrierattr_t *attr, int pshared);
+// int dc_pthread_getcpuclockid(const struct dc_env *env, struct dc_error *err, pthread_t thread_id, clockid_t *clock_id);
+// int dc_pthread_setschedprio(const struct dc_env *env, struct dc_error *err, pthread_t thread, int prio);
 
 
 #endif //LIBDC_POSIX_OPTIONAL_DC_PTHREAD_H

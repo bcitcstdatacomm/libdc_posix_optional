@@ -19,6 +19,9 @@
  */
 
 
+#error "No funnctions exist in this header"
+
+
 #include <dc_env/env.h>
 #include <dc_posix/dc_fcntl.h>
 #include <fcntl.h>
@@ -29,29 +32,9 @@ extern "C" {
 #endif
 
 
-/**
- *
- * @param env
- * @param err
- * @param fd
- * @param offset
- * @param len
- * @param advice
- * @return
- */
-int dc_posix_fadvise(const struct dc_env *env, struct dc_error *err, int fd, off_t offset, off_t len, int advice);
-
-
-/**
- *
- * @param env
- * @param err
- * @param fd
- * @param offset
- * @param len
- * @return
- */
-int dc_posix_fallocate(const struct dc_env *env, struct dc_error *err, int fd, off_t offset, off_t len);
+// Not available on macOS
+// int dc_posix_fadvise(const struct dc_env *env, struct dc_error *err, int fd, off_t offset, off_t len, int advice);
+// int dc_posix_fallocate(const struct dc_env *env, struct dc_error *err, int fd, off_t offset, off_t len);
 
 
 #ifdef __cplusplus

@@ -13,7 +13,6 @@ set(SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 set(INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 
 set(SOURCE_LIST ${SOURCE_DIR}/ ${SOURCE_DIR}/aio.c
-        ${SOURCE_DIR}/fcntl.c
         ${SOURCE_DIR}/pthread.c
         ${SOURCE_DIR}/sched.c
         ${SOURCE_DIR}/spawn.c
