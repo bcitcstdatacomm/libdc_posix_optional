@@ -128,16 +128,6 @@ int dc_posix_spawnattr_getpgroup(const struct dc_env *env, struct dc_error *err,
  * @param env
  * @param err
  * @param attr
- * @param schedparam
- * @return
- */
-int dc_posix_spawnattr_getschedparam(const struct dc_env *env, struct dc_error *err, const posix_spawnattr_t *restrict attr, struct sched_param *restrict schedparam);
-
-/**
- *
- * @param env
- * @param err
- * @param attr
  * @param schedpolicy
  * @return
  */
@@ -197,26 +187,6 @@ int dc_posix_spawnattr_setpgroup(const struct dc_env *env, struct dc_error *err,
  * @param env
  * @param err
  * @param attr
- * @param schedparam
- * @return
- */
-int dc_posix_spawnattr_setschedparam(const struct dc_env *env, struct dc_error *err, posix_spawnattr_t *restrict attr, const struct sched_param *restrict schedparam);
-
-/**
- *
- * @param env
- * @param err
- * @param attr
- * @param schedpolicy
- * @return
- */
-int dc_posix_spawnattr_setschedpolicy(const struct dc_env *env, struct dc_error *err, posix_spawnattr_t *attr, int schedpolicy);
-
-/**
- *
- * @param env
- * @param err
- * @param attr
  * @param sigdefault
  * @return
  */
@@ -251,5 +221,10 @@ int dc_posix_spawnp(const struct dc_env *env, struct dc_error *err, pid_t *restr
 }
 #endif
 
+
+// Not on macOS
+// int dc_posix_spawnattr_getschedparam(const struct dc_env *env, struct dc_error *err, const posix_spawnattr_t *restrict attr, struct sched_param *restrict schedparam);
+// int dc_posix_spawnattr_setschedparam(const struct dc_env *env, struct dc_error *err, posix_spawnattr_t *restrict attr, const struct sched_param *restrict schedparam);
+// int dc_posix_spawnattr_setschedpolicy(const struct dc_env *env, struct dc_error *err, posix_spawnattr_t *attr, int schedpolicy);
 
 #endif //LIBDC_POSIX_OPTIONAL_DC_SPAWN_H

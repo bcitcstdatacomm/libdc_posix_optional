@@ -117,17 +117,6 @@ int dc_posix_spawnattr_getpgroup(const struct dc_env *env, struct dc_error *err,
     return ret_val;
 }
 
-int dc_posix_spawnattr_getschedparam(const struct dc_env *env, struct dc_error *err, const posix_spawnattr_t *restrict attr, struct sched_param *restrict schedparam)
-{
-    int ret_val;
-
-    DC_TRACE(env);
-    errno = 0;
-    ret_val = posix_spawnattr_getschedparam(attr, schedparam);
-
-    return ret_val;
-}
-
 int dc_posix_spawnattr_getschedpolicy(const struct dc_env *env, struct dc_error *err, const posix_spawnattr_t *restrict attr, int *restrict schedpolicy)
 {
     int ret_val;
@@ -190,28 +179,6 @@ int dc_posix_spawnattr_setpgroup(const struct dc_env *env, struct dc_error *err,
     DC_TRACE(env);
     errno = 0;
     ret_val = posix_spawnattr_setpgroup(attr, pgroup);
-
-    return ret_val;
-}
-
-int dc_posix_spawnattr_setschedparam(const struct dc_env *env, struct dc_error *err, posix_spawnattr_t *restrict attr, const struct sched_param *restrict schedparam)
-{
-    int ret_val;
-
-    DC_TRACE(env);
-    errno = 0;
-    ret_val = posix_spawnattr_setschedparam(attr, schedparam);
-
-    return ret_val;
-}
-
-int dc_posix_spawnattr_setschedpolicy(const struct dc_env *env, struct dc_error *err, posix_spawnattr_t *attr, int schedpolicy)
-{
-    int ret_val;
-
-    DC_TRACE(env);
-    errno = 0;
-    ret_val = posix_spawnattr_setschedpolicy(attr, schedpolicy);
 
     return ret_val;
 }
