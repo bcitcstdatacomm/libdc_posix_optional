@@ -117,17 +117,6 @@ int dc_posix_spawnattr_getpgroup(const struct dc_env *env, struct dc_error *err,
     return ret_val;
 }
 
-int dc_posix_spawnattr_getschedpolicy(const struct dc_env *env, struct dc_error *err, const posix_spawnattr_t *restrict attr, int *restrict schedpolicy)
-{
-    int ret_val;
-
-    DC_TRACE(env);
-    errno = 0;
-    ret_val = posix_spawnattr_getschedpolicy(attr, schedpolicy);
-
-    return ret_val;
-}
-
 int dc_posix_spawnattr_getsigdefault(const struct dc_env *env, struct dc_error *err, const posix_spawnattr_t *restrict attr, sigset_t *restrict sigdefault)
 {
     int ret_val;
