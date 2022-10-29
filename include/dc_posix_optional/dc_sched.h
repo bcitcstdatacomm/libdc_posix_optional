@@ -47,16 +47,6 @@ int dc_sched_get_priority_max(const struct dc_env *env, struct dc_error *err, in
  */
 int dc_sched_get_priority_min(const struct dc_env *env, struct dc_error *err, int policy);
 
-/**
- *
- * @param env
- * @param err
- * @param pid
- * @param param
- * @return
- */
-int dc_sched_getparam(const struct dc_env *env, struct dc_error *err, pid_t pid, struct sched_param *param);
-
 
 #ifdef __cplusplus
 }
@@ -64,6 +54,7 @@ int dc_sched_getparam(const struct dc_env *env, struct dc_error *err, pid_t pid,
 
 
 // Not on macOS
+// int dc_sched_getparam(const struct dc_env *env, struct dc_error *err, pid_t pid, struct sched_param *param);
 // int dc_sched_getscheduler(const struct dc_env *env, struct dc_error *err, pid_t pid);
 // int dc_sched_rr_get_interval(const struct dc_env *env, struct dc_error *err, pid_t pid, struct timespec *interval);
 // int dc_sched_setparam(const struct dc_env *env, struct dc_error *err, pid_t pid, const struct sched_param *param);

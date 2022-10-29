@@ -40,13 +40,3 @@ int dc_sched_get_priority_min(const struct dc_env *env, struct dc_error *err, in
     return ret_val;
 }
 
-int dc_sched_getparam(const struct dc_env *env, struct dc_error *err, pid_t pid, struct sched_param *param)
-{
-    int ret_val;
-
-    DC_TRACE(env);
-    errno = 0;
-    ret_val = sched_getparam(pid, param);
-
-    return ret_val;
-}
