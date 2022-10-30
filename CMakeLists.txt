@@ -16,12 +16,14 @@ set(SOURCE_LIST ${SOURCE_DIR}/ ${SOURCE_DIR}/aio.c
         ${SOURCE_DIR}/pthread.c
         ${SOURCE_DIR}/sched.c
         ${SOURCE_DIR}/spawn.c
+        ${SOURCE_DIR}/time.c
         )
 set(HEADER_LIST ${INCLUDE_DIR}/dc_posix_optional/dc_aio.h
         ${INCLUDE_DIR}/dc_posix_optional/dc_fcntl.h
         ${INCLUDE_DIR}/dc_posix_optional/dc_pthread.h
         ${INCLUDE_DIR}/dc_posix_optional/dc_sched.h
         ${INCLUDE_DIR}/dc_posix_optional/dc_spawn.h
+        ${INCLUDE_DIR}/dc_posix_optional/dc_time.h
     )
 
 add_compile_definitions(_POSIX_C_SOURCE=200809L)
