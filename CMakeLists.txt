@@ -16,7 +16,6 @@ set(SOURCE_LIST ${SOURCE_DIR}/ ${SOURCE_DIR}/aio.c
         ${SOURCE_DIR}/pthread.c
         ${SOURCE_DIR}/sched.c
         ${SOURCE_DIR}/spawn.c
-        ${SOURCE_DIR}/time.c
         )
 set(HEADER_LIST ${INCLUDE_DIR}/dc_posix_optional/dc_aio.h
         ${INCLUDE_DIR}/dc_posix_optional/dc_fcntl.h

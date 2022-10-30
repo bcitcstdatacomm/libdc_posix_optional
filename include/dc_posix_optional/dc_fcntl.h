@@ -19,7 +19,7 @@
  */
 
 
-#error "No funnctions exist in this header"
+#error "No functions exist in this header"
 
 
 #ifdef __cplusplus
@@ -27,14 +27,14 @@ extern "C" {
 #endif
 
 
-// Not available on macOS
-// int dc_posix_fadvise(const struct dc_env *env, struct dc_error *err, int fd, off_t offset, off_t len, int advice);
-// int dc_posix_fallocate(const struct dc_env *env, struct dc_error *err, int fd, off_t offset, off_t len);
-
-
 #ifdef __cplusplus
 }
 #endif
+
+
+// Not available on macOS
+// int dc_posix_fadvise(const struct dc_env *env, struct dc_error *err, int fd, off_t offset, off_t len, int advice);
+// int dc_posix_fallocate(const struct dc_env *env, struct dc_error *err, int fd, off_t offset, off_t len);
 
 
 #endif // LIBDC_POSIX_OPTIONAL_DC_FCNTL_H

@@ -19,6 +19,9 @@
  */
 
 
+#error "No functions exist in this header"
+
+
 #include <dc_env/env.h>
 #include <time.h>
 
@@ -28,20 +31,12 @@ extern "C" {
 #endif
 
 
-/**
- *
- * @param env
- * @param err
- * @param pid
- * @param clock_id
- * @return
- */
-int dc_clock_getcpuclockid(const struct dc_env *env, struct dc_error *err, pid_t pid, clockid_t *clock_id);
-
-
 #ifdef __cplusplus
 }
 #endif
 
+
+// Not on macOS:
+// int dc_clock_getcpuclockid(const struct dc_env *env, struct dc_error *err, pid_t pid, clockid_t *clock_id);
 
 #endif // LIBDC_POSIX_OPTIONAL_DC_AIO_H
