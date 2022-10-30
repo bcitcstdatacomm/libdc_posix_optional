@@ -163,48 +163,10 @@ set_target_properties(dc_posix_optional PROPERTIES
 
 find_library(LIBDC_ERROR dc_error REQUIRED)
 find_library(LIBDC_ENV dc_env REQUIRED)
-find_library(LIBDC_C dc_c REQUIRED)
-find_library(LIBDC_POSIX dc_posix REQUIRED)
-find_library(LIB_CRYPT crypt)
-find_library(LIB_DL dl)
-find_library(LIB_GDBM gdbm)
-find_library(LIB_GDBM_COMPAT gdbm_compat)
-find_library(LIB_ICONV iconv)
-find_library(LIB_PTHREAD pthread)
-find_library(LIB_RT rt)
+
 
 target_link_libraries(dc_posix_optional PUBLIC ${LIBDC_ERROR})
 target_link_libraries(dc_posix_optional PUBLIC ${LIBDC_ENV})
-target_link_libraries(dc_posix_optional PUBLIC ${LIBDC_C})
-target_link_libraries(dc_posix_optional PUBLIC ${LIBDC_POSIX})
-
-if(LIB_CRYPT)
-    target_link_libraries(dc_posix_optional PUBLIC ${LIB_CRYPT})
-endif()
-
-if(LIB_DL)
-    target_link_libraries(dc_posix_optional PUBLIC ${LIB_DL})
-endif()
-
-if(LIB_GDBM)
-    target_link_libraries(dc_posix_optional PUBLIC ${LIB_GDBM})
-endif()
-
-if(LIB_GDBM_COMPAT)
-    target_link_libraries(dc_posix_optional PUBLIC ${LIB_GDBM_COMPAT})
-endif()
-
-if(LIB_ICONV)
-    target_link_libraries(dc_posix_optional PUBLIC ${LIB_ICONV})
-endif()
-
-if(LIB_PTHREAD)
-    target_link_libraries(dc_posix_optional PUBLIC ${LIB_PTHREAD})
-endif()
-
-if(LIB_RT)
-    target_link_libraries(dc_posix_optional PUBLIC ${LIB_RT})
-endif()
 
 install(TARGETS dc_posix_optional LIBRARY DESTINATION lib)
 install(FILES ${HEADER_LIST} DESTINATION include/dc_posix_optional)
