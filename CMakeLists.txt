@@ -163,7 +163,6 @@ set_target_properties(dc_posix_optional PROPERTIES
 find_library(LIBDC_ERROR dc_error REQUIRED)
 find_library(LIBDC_ENV dc_env REQUIRED)
 
-
 target_link_libraries(dc_posix_optional PUBLIC ${LIBDC_ERROR})
 target_link_libraries(dc_posix_optional PUBLIC ${LIBDC_ENV})
 
