@@ -26,6 +26,11 @@ int dc_pthread_attr_getinheritsched(const struct dc_env *env, struct dc_error *e
     errno = 0;
     ret_val = pthread_attr_getinheritsched(attr, inheritsched);
 
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
+
     return ret_val;
 }
 
@@ -36,6 +41,11 @@ int dc_pthread_attr_getschedpolicy(const struct dc_env *env, struct dc_error *er
     DC_TRACE(env);
     errno = 0;
     ret_val = pthread_attr_getschedpolicy(attr, policy);
+
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
 
     return ret_val;
 }
@@ -48,6 +58,11 @@ int dc_pthread_attr_getscope(const struct dc_env *env, struct dc_error *err, con
     errno = 0;
     ret_val = pthread_attr_getscope(attr, contentionscope);
 
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
+
     return ret_val;
 }
 
@@ -58,6 +73,11 @@ int dc_pthread_attr_getstack(const struct dc_env *env, struct dc_error *err, con
     DC_TRACE(env);
     errno = 0;
     ret_val = pthread_attr_getstack(attr, stackaddr, stacksize);
+
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
 
     return ret_val;
 }
@@ -70,6 +90,11 @@ int dc_pthread_attr_getstacksize(const struct dc_env *env, struct dc_error *err,
     errno = 0;
     ret_val = pthread_attr_getstacksize(attr, stacksize);
 
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
+
     return ret_val;
 }
 
@@ -80,6 +105,11 @@ int dc_pthread_attr_setinheritsched(const struct dc_env *env, struct dc_error *e
     DC_TRACE(env);
     errno = 0;
     ret_val = pthread_attr_setinheritsched(attr, inheritsched);
+
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
 
     return ret_val;
 }
@@ -92,6 +122,11 @@ int dc_pthread_attr_setschedpolicy(const struct dc_env *env, struct dc_error *er
     errno = 0;
     ret_val = pthread_attr_setschedpolicy(attr, policy);
 
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
+
     return ret_val;
 }
 
@@ -102,6 +137,11 @@ int dc_pthread_attr_setscope(const struct dc_env *env, struct dc_error *err, pth
     DC_TRACE(env);
     errno = 0;
     ret_val = pthread_attr_setscope(attr, contentionscope);
+
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
 
     return ret_val;
 }
@@ -114,6 +154,11 @@ int dc_pthread_attr_setstack(const struct dc_env *env, struct dc_error *err, pth
     errno = 0;
     ret_val = pthread_attr_setstack(attr, stackaddr, stacksize);
 
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
+
     return ret_val;
 }
 
@@ -124,6 +169,11 @@ int dc_pthread_attr_setstacksize(const struct dc_env *env, struct dc_error *err,
     DC_TRACE(env);
     errno = 0;
     ret_val = pthread_attr_setstacksize(attr, stacksize);
+
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
 
     return ret_val;
 }
@@ -136,6 +186,11 @@ int dc_pthread_condattr_getpshared(const struct dc_env *env, struct dc_error *er
     errno = 0;
     ret_val = pthread_condattr_getpshared(attr, pshared);
 
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
+
     return ret_val;
 }
 
@@ -146,6 +201,11 @@ int dc_pthread_condattr_setpshared(const struct dc_env *env, struct dc_error *er
     DC_TRACE(env);
     errno = 0;
     ret_val = pthread_condattr_setpshared(attr, pshared);
+
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
 
     return ret_val;
 }
@@ -158,6 +218,11 @@ int dc_pthread_getschedparam(const struct dc_env *env, struct dc_error *err, pth
     errno = 0;
     ret_val = pthread_getschedparam(thread, policy, param);
 
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
+
     return ret_val;
 }
 
@@ -168,6 +233,11 @@ int dc_pthread_mutex_getprioceiling(const struct dc_env *env, struct dc_error *e
     DC_TRACE(env);
     errno = 0;
     ret_val = pthread_mutex_getprioceiling(mutex, prioceiling);
+
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
 
     return ret_val;
 }
@@ -180,6 +250,11 @@ int dc_pthread_mutex_setprioceiling(const struct dc_env *env, struct dc_error *e
     errno = 0;
     ret_val = pthread_mutex_setprioceiling(mutex, prioceiling, old_ceiling);
 
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
+
     return ret_val;
 }
 
@@ -190,6 +265,11 @@ int dc_pthread_mutexattr_getprioceiling(const struct dc_env *env, struct dc_erro
     DC_TRACE(env);
     errno = 0;
     ret_val = pthread_mutexattr_getprioceiling(attr, prioceiling);
+
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
 
     return ret_val;
 }
@@ -202,6 +282,11 @@ int dc_pthread_mutexattr_getprotocol(const struct dc_env *env, struct dc_error *
     errno = 0;
     ret_val = pthread_mutexattr_getprotocol(attr, protocol);
 
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
+
     return ret_val;
 }
 
@@ -212,6 +297,11 @@ int dc_pthread_mutexattr_getpshared(const struct dc_env *env, struct dc_error *e
     DC_TRACE(env);
     errno = 0;
     ret_val = pthread_mutexattr_getpshared(attr, pshared);
+
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
 
     return ret_val;
 }
@@ -224,6 +314,11 @@ int dc_pthread_mutexattr_setprioceiling(const struct dc_env *env, struct dc_erro
     errno = 0;
     ret_val = pthread_mutexattr_setprioceiling(attr, prioceiling);
 
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
+
     return ret_val;
 }
 
@@ -234,6 +329,11 @@ int dc_pthread_mutexattr_setprotocol(const struct dc_env *env, struct dc_error *
     DC_TRACE(env);
     errno = 0;
     ret_val = pthread_mutexattr_setprotocol(attr, protocol);
+
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
 
     return ret_val;
 }
@@ -246,6 +346,11 @@ int dc_pthread_mutexattr_setpshared(const struct dc_env *env, struct dc_error *e
     errno = 0;
     ret_val = pthread_mutexattr_setpshared(attr, pshared);
 
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
+
     return ret_val;
 }
 
@@ -256,6 +361,11 @@ int dc_pthread_rwlockattr_getpshared(const struct dc_env *env, struct dc_error *
     DC_TRACE(env);
     errno = 0;
     ret_val = pthread_rwlockattr_getpshared(attr, pshared);
+
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
 
     return ret_val;
 }
@@ -268,6 +378,11 @@ int dc_pthread_rwlockattr_setpshared(const struct dc_env *env, struct dc_error *
     errno = 0;
     ret_val = pthread_rwlockattr_setpshared(attr, pshared);
 
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
+
     return ret_val;
 }
 
@@ -278,6 +393,11 @@ int dc_pthread_setschedparam(const struct dc_env *env, struct dc_error *err, pth
     DC_TRACE(env);
     errno = 0;
     ret_val = pthread_setschedparam(thread, policy, param);
+
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
 
     return ret_val;
 }

@@ -26,6 +26,11 @@ int dc_sched_get_priority_max(const struct dc_env *env, struct dc_error *err, in
     errno = 0;
     ret_val = sched_get_priority_max(policy);
 
+    if(ret_val == -1)
+    {
+        DC_ERROR_RAISE_ERRNO(err, errno);
+    }
+
     return ret_val;
 }
 
@@ -36,6 +41,11 @@ int dc_sched_get_priority_min(const struct dc_env *env, struct dc_error *err, in
     DC_TRACE(env);
     errno = 0;
     ret_val = sched_get_priority_min(policy);
+
+    if(ret_val == -1)
+    {
+        DC_ERROR_RAISE_ERRNO(err, errno);
+    }
 
     return ret_val;
 }

@@ -26,5 +26,10 @@ int dc_aio_fsync(const struct dc_env *env, struct dc_error *err, int op, struct 
     errno = 0;
     ret_val = aio_fsync(op, aiocbp);
 
+    if(ret_val == -1)
+    {
+        DC_ERROR_RAISE_ERRNO(err, errno);
+    }
+
     return ret_val;
 }

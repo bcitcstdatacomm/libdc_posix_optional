@@ -84,6 +84,16 @@ int dc_pthread_attr_getstacksize(const struct dc_env *env, struct dc_error *err,
  * @param env
  * @param err
  * @param attr
+ * @param inheritsched
+ * @return
+ */
+int dc_pthread_attr_setinheritsched(const struct dc_env *env, struct dc_error *err, pthread_attr_t *attr, int inheritsched);
+
+/**
+ *
+ * @param env
+ * @param err
+ * @param attr
  * @param policy
  * @return
  */

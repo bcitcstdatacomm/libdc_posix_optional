@@ -26,6 +26,11 @@ int dc_posix_spawn(const struct dc_env *env, struct dc_error *err, pid_t *restri
     errno = 0;
     ret_val = posix_spawn(pid, path, file_actions, attrp, argv, envp);
 
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
+
     return ret_val;
 }
 
@@ -36,6 +41,11 @@ int dc_posix_spawn_file_actions_addclose(const struct dc_env *env, struct dc_err
     DC_TRACE(env);
     errno = 0;
     ret_val = posix_spawn_file_actions_addclose(file_actions, fildes);
+
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
 
     return ret_val;
 }
@@ -48,6 +58,11 @@ int dc_posix_spawn_file_actions_adddup2(const struct dc_env *env, struct dc_erro
     errno = 0;
     ret_val = posix_spawn_file_actions_adddup2(file_actions, fildes, newfildes);
 
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
+
     return ret_val;
 }
 
@@ -58,6 +73,11 @@ int dc_posix_spawn_file_actions_addopen(const struct dc_env *env, struct dc_erro
     DC_TRACE(env);
     errno = 0;
     ret_val = posix_spawn_file_actions_addopen(file_actions, fildes, path, oflag, mode);
+
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
 
     return ret_val;
 }
@@ -70,6 +90,11 @@ int dc_posix_spawn_file_actions_destroy(const struct dc_env *env, struct dc_erro
     errno = 0;
     ret_val = posix_spawn_file_actions_destroy(file_actions);
 
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
+
     return ret_val;
 }
 
@@ -80,6 +105,11 @@ int dc_posix_spawn_file_actions_init(const struct dc_env *env, struct dc_error *
     DC_TRACE(env);
     errno = 0;
     ret_val = posix_spawn_file_actions_init(file_actions);
+
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
 
     return ret_val;
 }
@@ -92,6 +122,11 @@ int dc_posix_spawnattr_destroy(const struct dc_env *env, struct dc_error *err, p
     errno = 0;
     ret_val = posix_spawnattr_destroy(attr);
 
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
+
     return ret_val;
 }
 
@@ -102,6 +137,11 @@ int dc_posix_spawnattr_getflags(const struct dc_env *env, struct dc_error *err, 
     DC_TRACE(env);
     errno = 0;
     ret_val = posix_spawnattr_getflags(attr, flags);
+
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
 
     return ret_val;
 }
@@ -114,6 +154,11 @@ int dc_posix_spawnattr_getpgroup(const struct dc_env *env, struct dc_error *err,
     errno = 0;
     ret_val = posix_spawnattr_getpgroup(attr, pgroup);
 
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
+
     return ret_val;
 }
 
@@ -124,6 +169,11 @@ int dc_posix_spawnattr_getsigdefault(const struct dc_env *env, struct dc_error *
     DC_TRACE(env);
     errno = 0;
     ret_val = posix_spawnattr_getsigdefault(attr, sigdefault);
+
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
 
     return ret_val;
 }
@@ -136,6 +186,11 @@ int dc_posix_spawnattr_getsigmask(const struct dc_env *env, struct dc_error *err
     errno = 0;
     ret_val = posix_spawnattr_getsigmask(attr, sigmask);
 
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
+
     return ret_val;
 }
 
@@ -146,6 +201,11 @@ int dc_posix_spawnattr_init(const struct dc_env *env, struct dc_error *err, posi
     DC_TRACE(env);
     errno = 0;
     ret_val = posix_spawnattr_init(attr);
+
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
 
     return ret_val;
 }
@@ -158,6 +218,11 @@ int dc_posix_spawnattr_setflags(const struct dc_env *env, struct dc_error *err, 
     errno = 0;
     ret_val = posix_spawnattr_setflags(attr, flags);
 
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
+
     return ret_val;
 }
 
@@ -168,6 +233,11 @@ int dc_posix_spawnattr_setpgroup(const struct dc_env *env, struct dc_error *err,
     DC_TRACE(env);
     errno = 0;
     ret_val = posix_spawnattr_setpgroup(attr, pgroup);
+
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
 
     return ret_val;
 }
@@ -180,6 +250,11 @@ int dc_posix_spawnattr_setsigdefault(const struct dc_env *env, struct dc_error *
     errno = 0;
     ret_val = posix_spawnattr_setsigdefault(attr, sigdefault);
 
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
+
     return ret_val;
 }
 
@@ -191,6 +266,11 @@ int dc_posix_spawnattr_setsigmask(const struct dc_env *env, struct dc_error *err
     errno = 0;
     ret_val = posix_spawnattr_setsigmask(attr, sigmask);
 
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
+
     return ret_val;
 }
 
@@ -201,6 +281,11 @@ int dc_posix_spawnp(const struct dc_env *env, struct dc_error *err, pid_t *restr
     DC_TRACE(env);
     errno = 0;
     ret_val = posix_spawnp(pid, file, file_actions, attrp, argv, envp);
+
+    if(ret_val != 0)
+    {
+        // TODO: what?
+    }
 
     return ret_val;
 }
