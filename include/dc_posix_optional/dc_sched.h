@@ -20,8 +20,6 @@
 
 
 #include <dc_env/env.h>
-#include <sched.h>
-#include <sys/types.h>
 
 
 #ifdef __cplusplus

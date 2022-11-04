@@ -16,6 +16,7 @@
 
 
 #include "dc_posix_optional/dc_sched.h"
+#include <sched.h>
 
 
 int dc_sched_get_priority_max(const struct dc_env *env, struct dc_error *err, int policy)
