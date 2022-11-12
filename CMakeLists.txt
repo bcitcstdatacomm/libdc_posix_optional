@@ -193,12 +193,17 @@ set_target_properties(dc_posix_optional PROPERTIES
 find_library(LIBDC_ERROR dc_error REQUIRED)
 find_library(LIBDC_ENV dc_env REQUIRED)
 find_library(LIBRT rt)
+find_library(LIBPTHREAD pthread)
 
 target_link_libraries(dc_posix_optional PUBLIC ${LIBDC_ERROR})
 target_link_libraries(dc_posix_optional PUBLIC ${LIBDC_ENV})
 
 if(LIBRT)
     target_link_libraries(dc_posix_optional PUBLIC ${LIBRT})
+endif()
+
+if(LIBPTHREAD)
+    target_link_libraries(dc_posix_optional PUBLIC ${LIBPTHREAD})
 endif()
 
 install(TARGETS dc_posix_optional LIBRARY DESTINATION lib)
