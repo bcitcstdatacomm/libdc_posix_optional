@@ -18,11 +18,14 @@ target_include_directories(libdc_posix_optional_test PRIVATE /usr/local/include)
 find_library(LIBCGREEN cgreen REQUIRED)
 find_library(LIBDC_ERROR dc_error REQUIRED)
 find_library(LIBDC_ENV dc_env REQUIRED)
-find_library(LIBDC_C dc_c REQUIRED)
+find_library(LIBRT rt)
 
 target_link_libraries(libdc_posix_optional_test PRIVATE ${LIBCGREEN})
 target_link_libraries(libdc_posix_optional_test PRIVATE ${LIBDC_ERROR})
 target_link_libraries(libdc_posix_optional_test PRIVATE ${LIBDC_ENV})
-target_link_libraries(libdc_posix_optional_test PRIVATE ${LIBDC_C})
+
+if(LIBRT)
+    target_link_libraries(dc_posix_optional PUBLIC ${LIBRT})
+endif()
 
 add_test(NAME libdc_posix_optional_test COMMAND libdc_posix_optional_test)
