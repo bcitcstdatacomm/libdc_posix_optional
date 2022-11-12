@@ -25,7 +25,7 @@ target_link_libraries(libdc_posix_optional_test PRIVATE ${LIBDC_ERROR})
 target_link_libraries(libdc_posix_optional_test PRIVATE ${LIBDC_ENV})
 
 if(LIBRT)
-    target_link_libraries(dc_posix_optional PUBLIC ${LIBRT})
+    target_link_libraries(libdc_posix_optional_test PUBLIC ${LIBRT})
 endif()
 
 add_test(NAME libdc_posix_optional_test COMMAND libdc_posix_optional_test)
