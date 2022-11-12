@@ -97,7 +97,7 @@ if (${SANITIZE})
             "-fharden-control-flow-redundancy"
             "-fstack-protector=all"
             ##            "-fstack-check"
-            "-fstack-clash-protection"
+            ##            "-fstack-clash-protection"
             "-finstrument-functions"
             "-fsanitize=leak"
             "-fno-delete-null-pointer-checks"
