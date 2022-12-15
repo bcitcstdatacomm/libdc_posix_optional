@@ -20,14 +20,19 @@ set(SOURCE_LIST ${SOURCE_DIR}/ ${SOURCE_DIR}/aio.c
         ${SOURCE_DIR}/pthread.c
         ${SOURCE_DIR}/sched.c
         ${SOURCE_DIR}/spawn.c
+        ${SOURCE_DIR}/stdlib.c
+        ${SOURCE_DIR}/sys/mman.c
         )
 set(HEADER_LIST ${INCLUDE_DIR}/dc_posix_optional/dc_aio.h
         ${INCLUDE_DIR}/dc_posix_optional/dc_fcntl.h
+        ${INCLUDE_DIR}/dc_posix_optional/dc_mqueue.h
         ${INCLUDE_DIR}/dc_posix_optional/dc_pthread.h
         ${INCLUDE_DIR}/dc_posix_optional/dc_sched.h
         ${INCLUDE_DIR}/dc_posix_optional/dc_spawn.h
+        ${INCLUDE_DIR}/dc_posix_optional/dc_stdlib.h
         ${INCLUDE_DIR}/dc_posix_optional/dc_time.h
     )
+set(HEADER_LIST_SYS ${INCLUDE_DIR}/dc_posix_optional/sys/dc_mman.h)
 
 add_compile_definitions(_POSIX_C_SOURCE=200809L)
 add_compile_definitions(_XOPEN_SOURCE=700)
@@ -130,7 +135,7 @@ set(DOXYGEN_WARNINGS YES)
 set(DOXYGEN_QUIET YES)
 
 doxygen_add_docs(doxygen
-        ${HEADER_LIST}
+        ${HEADER_LIST} ${HEADER_LIST_SYS}
         WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
         COMMENT "Generating Doxygen documentation for libdc_posix_optional")
 
@@ -181,7 +186,7 @@ else ()
     set(CMAKE_C_CLANG_TIDY clang-tidy -checks=${CLANG_TIDY_CHECKS};--quiet)
 endif ()
 
-add_library(dc_posix_optional SHARED ${SOURCE_LIST} ${HEADER_LIST})
+add_library(dc_posix_optional SHARED ${SOURCE_LIST} ${HEADER_LIST} ${HEADER_LIST_SYS})
 target_include_directories(dc_posix_optional PRIVATE include/dc_posix_optional)
 target_include_directories(dc_posix_optional PRIVATE /usr/local/include)
 target_link_directories(dc_posix_optional PRIVATE /usr/local/lib)
@@ -212,8 +217,6 @@ endif()
 
 install(TARGETS dc_posix_optional LIBRARY DESTINATION lib)
 install(FILES ${HEADER_LIST} DESTINATION include/dc_posix_optional)
-install(FILES ${HEADER_LIST_ARPA} DESTINATION include/dc_posix_optional/arpa)
-install(FILES ${HEADER_LIST_NET} DESTINATION include/dc_posix_optional/net)
 install(FILES ${HEADER_LIST_SYS} DESTINATION include/dc_posix_optional/sys)
 
 add_dependencies(dc_posix_optional doxygen)
